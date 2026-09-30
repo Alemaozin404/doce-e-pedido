@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-rose: #e8b4bc;
+  --brand-chocolate: #5c4033;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream text-chocolate font-sans antialiased;
+}
+
+::selection {
+  @apply bg-rose-soft text-chocolate-dark;
+}
+
+/* Foco visível e elegante (acessibilidade) */
+*:focus-visible {
+  outline: 2px solid var(--brand-chocolate);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Scrollbar discreta */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f0e6;
+}
+::-webkit-scrollbar-thumb {
+  background: #d9c6b8;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c4a58f;
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .heading-display {
+    @apply font-display text-chocolate-dark;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
